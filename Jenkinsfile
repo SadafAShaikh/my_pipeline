@@ -39,7 +39,7 @@ pipeline {
     post {
         always {
             // Clean up Docker images to save space
-            sh "docker rmi ${DOCKER_HUB_REPO}:${env.BUILD_ID} || true"
+            bat "docker rmi ${DOCKER_HUB_REPO}:${env.BUILD_ID} || true"
         }
     }
 }
